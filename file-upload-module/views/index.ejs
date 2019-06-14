@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TimeStamp Free Service for all</title>
+    <script src="/javascripts/jquery.min.js"></script>
+  </head>
+  <body>
+	  <center>
+	  <br>
+          <strong>TimeStamp service (free), upload your digital file and it will push hash info into Blockchain automatically. 
+          <br>
+	  免費幫你的數位檔案蓋上時間戳和哈希值並自動上鏈
+	  </strong>
+	  <br>	  By : chester.kuo@gmail.com 
+	  </center>
+	  <br><br><br>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input name="fileUpload" type="file" />
+        <img src="" alt="">
+	<br><br><br><br><br>
+	<br><br><br><br><br>
+        <button type="submit">上鏈/ Push to blockchain</button>
+    </form>
+    <script>
+    (function($){
+      $('input').on('change', function(event) {
+        var files = event.target.files,
+            reader = new FileReader();
+        if(files && files[0]){
+            reader.onload = function (ev) {
+                $('img').attr('src', ev.target.result);
+            }
+            reader.readAsDataURL(files[0]);
+        }
+      })
+    }(jQuery))
+    </script>
+    <br>
+    <br>
+  </body>
+</html>
